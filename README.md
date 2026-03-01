@@ -105,7 +105,7 @@ LabelPress requests minimal permissions:
 | `documents` | Create the label layout document |
 | `drive.file` | Save the generated PDF to your Drive |
 
-See [PRIVACY_POLICY.md](PRIVACY_POLICY.md) for full details. No data is stored, shared, or sent to external servers.
+See [privacy-policy.md](privacy-policy.md) for full details. No data is stored, shared, or sent to external servers.
 
 ## Curious about ASCII Logo
 [Cool Tool Here](https://patorjk.com/software/taag)
