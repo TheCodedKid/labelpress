@@ -120,14 +120,14 @@ const AVERY_TEMPLATES = {
 
 function onOpen() {
   SpreadsheetApp.getUi()
-    .createMenu('📋 Label Maker')
+    .createMenu('📋 LabelPress')
     .addItem('Generate Labels...', 'showSidebar')
     .addToUi();
 }
 
 function showSidebar() {
   const html = HtmlService.createHtmlOutputFromFile('Sidebar')
-    .setTitle('Avery Label Generator')
+    .setTitle('LabelPress')
     .setWidth(350);
   SpreadsheetApp.getUi().showSidebar(html);
 }
@@ -315,7 +315,7 @@ function generateLabels(config) {
 
   return {
     pdfUrl: pdfFile.getUrl(),
-    docUrl: doc.getUrl(),
+    docUrl: 'https://docs.google.com/document/d/' + doc.getId() + '/edit',
     labelCount: totalLabels - startPosition,
     pageCount: totalPages
   };

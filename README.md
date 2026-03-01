@@ -101,9 +101,11 @@ LabelPress requests minimal permissions:
 
 | Scope | Why |
 |-------|-----|
-| `spreadsheets.readonly` | Read your column headers and data |
+| `spreadsheets.currentonly` | Read column headers and data from the current sheet |
 | `documents` | Create the label layout document |
-| `drive.file` | Save the generated PDF to your Drive |
+| `drive` | Save the generated Doc and PDF to your Drive |
+| `script.container.ui` | Display the sidebar UI in Google Sheets |
+| `script.external_request` | Export the Doc as a PDF |
 
 See [privacy-policy.md](privacy-policy.md) for full details. No data is stored, shared, or sent to external servers.
 

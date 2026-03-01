@@ -4,13 +4,15 @@
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
   "oauthScopes": [
-    "https://www.googleapis.com/auth/spreadsheets.readonly",
+    "https://www.googleapis.com/auth/spreadsheets.currentonly",
     "https://www.googleapis.com/auth/documents",
-    "https://www.googleapis.com/auth/drive.file"
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/script.external_request"
   ],
   "addOns": {
     "common": {
-      "name": "Label Maker",
+      "name": "LabelPress",
       "logoUrl": "https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/label/default/48px.svg",
       "layoutProperties": {
         "primaryColor": "#1a73e8"
