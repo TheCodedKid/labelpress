@@ -1,6 +1,9 @@
 /**
  * Avery Label Generator - Google Sheets Add-on
  * Generates printable PDF label sheets from spreadsheet data.
+ *
+ * SETUP: In your Google Sheet, go to Extensions > Apps Script,
+ * then copy these files into the script editor.
  */
 
 // ============================================================
@@ -127,7 +130,7 @@ function onOpen() {
 
 function showSidebar() {
   const html = HtmlService.createHtmlOutputFromFile('Sidebar')
-    .setTitle('LabelPress')
+    .setTitle('Avery Label Generator')
     .setWidth(350);
   SpreadsheetApp.getUi().showSidebar(html);
 }
@@ -290,6 +293,21 @@ function generateLabels(config) {
         });
 
         cell.setVerticalAlignment(DocumentApp.VerticalAlignment.CENTER);
+
+        // Add a spacer column for the gap between labels (not after last column)
+        if (col < template.columns - 1 && template.horizontalGap > 0) {
+          const spacer = tableRow.appendTableCell();
+          spacer.setWidth(template.horizontalGap * 72);
+          spacer.setPaddingTop(0);
+          spacer.setPaddingBottom(0);
+          spacer.setPaddingLeft(0);
+          spacer.setPaddingRight(0);
+          const spacerPara = spacer.getChild(0).asParagraph();
+          spacerPara.setText(' ');
+          spacerPara.setFontSize(1);
+          spacerPara.setSpacingBefore(0);
+          spacerPara.setSpacingAfter(0);
+        }
       }
     }
 
